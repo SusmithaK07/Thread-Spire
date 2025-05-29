@@ -1,0 +1,497 @@
+/* ===== THREADS APPLICATION ANIMATIONS ===== */
+/* A comprehensive set of CSS animations for enhancing user experience */
+
+/* ===== 1. FADE ANIMATIONS ===== */
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Directional fades */
+.fade-in-up {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.4s ease forwards;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.4s ease forwards;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== 2. SLIDE/SCALE ANIMATIONS ===== */
+.slide-up {
+  animation: slideUp 0.3s ease forwards;
+}
+
+.slide-down {
+  animation: slideDown 0.3s ease forwards;
+}
+
+.slide-left {
+  animation: slideLeft 0.3s ease forwards;
+}
+
+.slide-right {
+  animation: slideRight 0.3s ease forwards;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Scale animations */
+.scale-in {
+  animation: scaleIn 0.3s ease forwards;
+}
+
+.scale-out {
+  animation: scaleOut 0.3s ease forwards;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes scaleOut {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(0.95); opacity: 0; }
+}
+
+/* Combined animations for modals */
+.modal-enter {
+  animation: modalEnter 0.3s ease forwards;
+}
+
+.modal-leave {
+  animation: modalLeave 0.3s ease forwards;
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes modalLeave {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+}
+
+/* ===== 3. HOVER EFFECT ANIMATIONS ===== */
+/* Scale hover */
+.scale-hover {
+  transition: transform 0.3s ease;
+}
+
+.scale-hover:hover {
+  transform: scale(1.02);
+}
+
+/* Elevation hover for cards */
+.elevate-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.elevate-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Underline animation for links */
+.underline-hover {
+  position: relative;
+}
+
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+/* Glow effect */
+.glow-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 15px rgba(var(--primary), 0.5);
+}
+
+/* Background fill animation */
+.bg-fill-hover {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.bg-fill-hover::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.bg-fill-hover:hover {
+  color: var(--primary-foreground);
+}
+
+.bg-fill-hover:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ===== 4. MICRO-INTERACTION ANIMATIONS ===== */
+/* Button press effect */
+.button-press {
+  transition: transform 0.2s ease;
+}
+
+.button-press:active {
+  transform: scale(0.95);
+}
+
+/* Input focus animation */
+.input-focus {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-focus:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(var(--primary), 0.2);
+}
+
+/* Toggle switch animation */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--muted);
+  transition: 0.3s;
+  border-radius: 24px;
+}
+
+.toggle-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: var(--primary);
+}
+
+.toggle-switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Checkbox animation */
+.checkbox-animation input[type="checkbox"] {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.checkbox-animation input[type="checkbox"]::before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 2px;
+  left: 7px;
+  width: 6px;
+  height: 12px;
+  border-style: solid;
+  border-color: white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.checkbox-animation input[type="checkbox"]:checked {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.checkbox-animation input[type="checkbox"]:checked::before {
+  opacity: 1;
+  animation: checkmark 0.2s ease-in-out;
+}
+
+@keyframes checkmark {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+/* ===== 5. PAGE TRANSITION ANIMATIONS ===== */
+.page-transition-fade {
+  animation: pageFade 0.4s ease forwards;
+}
+
+.page-transition-slide {
+  animation: pageSlide 0.4s ease forwards;
+}
+
+.page-transition-scale {
+  animation: pageScale 0.4s ease forwards;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pageSlide {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageScale {
+  from { 
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== 6. PARALLAX SCROLLING ===== */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-position: center;
+  background-size: cover;
+  will-change: transform;
+}
+
+/* ===== 7. SCROLL-TRIGGERED ANIMATIONS ===== */
+/* Base class for scroll animations */
+[data-animate-on-scroll] {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Animation classes that will be applied by JS */
+.animated {
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+/* Fade in */
+.animated.fadeIn {
+  animation-name: fadeIn;
+}
+
+/* Fade in up */
+.animated.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+/* Fade in down */
+.animated.fadeInDown {
+  animation-name: fadeInDown;
+}
+
+/* Fade in left */
+.animated.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+/* Fade in right */
+.animated.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+/* Scale in */
+.animated.scaleIn {
+  animation-name: scaleIn;
+}
+
+/* Staggered animations for lists */
+.stagger-item {
+  opacity: 0;
+}
+
+.stagger-item.animated {
+  animation-name: fadeInUp;
+}
+
+/* Stagger delay utility classes */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+.delay-9 { animation-delay: 0.9s; }
+.delay-10 { animation-delay: 1s; }
+
+/* Animation durations */
+.duration-fast { animation-duration: 0.3s; }
+.duration-normal { animation-duration: 0.5s; }
+.duration-slow { animation-duration: 0.8s; }
+
+/* Animation easings */
+.ease-linear { animation-timing-function: linear; }
+.ease-in { animation-timing-function: ease-in; }
+.ease-out { animation-timing-function: ease-out; }
+.ease-in-out { animation-timing-function: ease-in-out; }
